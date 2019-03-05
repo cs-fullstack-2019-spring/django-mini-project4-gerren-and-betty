@@ -16,11 +16,11 @@
     <!--===========HELLO USER==============-->
     {% if user.is_authenticated %}
 
-    Hello!!! {{ user.username }}!
+    Hello, {{ user.username }}!!!
 
     <p><a href="{% url 'logout' %}">Logout</a></p>
     {% else %}
-
+    <p><a href="{% url 'newUser' %}">Create Account</a></p>
     <p>You are currently NOT logged in. Please log in to add to your favorite games.</p>
 
     {% endif %}
