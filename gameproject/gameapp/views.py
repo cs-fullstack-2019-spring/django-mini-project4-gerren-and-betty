@@ -7,6 +7,11 @@ from django.contrib.auth.models import User
 
 
 # Create your views here.
+<<<<<<< HEAD
+def index(request):
+    return HttpResponse("index")
+=======
+>>>>>>> b515525fa68212fe33a4081ee2956344d633b197
 
 
 @login_required
