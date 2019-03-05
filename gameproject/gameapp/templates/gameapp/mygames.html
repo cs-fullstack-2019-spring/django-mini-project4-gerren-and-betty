@@ -8,16 +8,15 @@ My Game Profile
 <!--A for loop iterating through a set of games.-->
 
 {% block content %}
-Here is a list of your games:
 {% if list_of_games %}
 
 {% for everyGame in list_of_games %}
+Here is a list of your games:
 <h2>{{everyGame.name}}</h2>
 
 {% endfor %}
 
 {% else %}
-
 <p>There is currently zero(0) games saved in your inventory.</p>
 {% endif %}
 {% endblock content %}
