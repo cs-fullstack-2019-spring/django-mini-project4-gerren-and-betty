@@ -7,10 +7,12 @@ from .models import GameModel
 # Create your views here.
 
 
-
-
 @login_required
 def mygames(request):
     list_of_games = GameModel.objects.filter(name=request.user)
     context = {'list_of_games': list_of_games}
     return render(request, 'gameapp/mygames.html', context)
+
+
+def index(request):
+    return HttpResponse('index')
