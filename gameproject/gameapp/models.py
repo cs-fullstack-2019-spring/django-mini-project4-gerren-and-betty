@@ -13,6 +13,8 @@ class CollectorModel(models.Model):
     dateAccountCreated = models.DateField(timezone.now)
     userTableForeignKey = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
 
+    def __str__(self):
+        return self.username
 
 class GameModel(models.Model):
     name = models.CharField(max_length=50)
@@ -20,3 +22,6 @@ class GameModel(models.Model):
     dateMade = models.DateField(default='')
     ageLimit = models.IntegerField(default=0)
     collector = models.ForeignKey(CollectorModel, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>index</title>
 </head>
 <body>
 
+<div>
+
+    <!--=============HEADER===============-->
+    <h1>{% block header %}
+        Welcome Game Collector!!
+        {% endblock header %}
+    </h1>
+    <!--===========HELLO USER==============-->
+    {% if user.is_authenticated %}
+    Hello!!! {{ user.username }}!
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+    <p>You are currently not logged in. Please log in to see what you have been missing.</p>
+    {% endif %}
+    <hr/>
+
+
+    {% block content %}
+    {% endblock content %}
+</div>
 </body>
 </html>
