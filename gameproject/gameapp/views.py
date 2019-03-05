@@ -7,13 +7,12 @@ from django.contrib.auth.models import User
 
 
 # Create your views here.
-<<<<<<< HEAD
+
 def index(request):
     return HttpResponse("index")
-=======
->>>>>>> b515525fa68212fe33a4081ee2956344d633b197
 
 
+# function injects list into mygames.html
 @login_required
 def mygames(request):
     list_of_games = GameModel.objects.filter(name=request.user)
@@ -21,7 +20,7 @@ def mygames(request):
     context = {'list_of_games': list_of_games}
     return render(request, 'gameapp/mygames.html', context)
 
-
+# test for index
 def index(request):
     return HttpResponse('index')
 
