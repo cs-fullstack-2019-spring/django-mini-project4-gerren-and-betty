@@ -1,5 +1,6 @@
 from django import forms
 from .models import GameModel
+from .models import CollectorModel
 
 
 class GameForm(forms.ModelForm):
@@ -19,3 +20,9 @@ class GameForm(forms.ModelForm):
         if ageLimitData < 13:
             raise forms.ValidationError("must be 13 or older")
         return ageLimitData
+
+
+class CollectorForm(forms.ModelForm):
+    class Meta:
+        model = CollectorModel
+        exclude = ['userTableForeignKey']

@@ -16,9 +16,11 @@
     <!--===========HELLO USER==============-->
     {% if user.is_authenticated %}
     Hello!!! {{ user.username }}!
+
     <p><a href="{% url 'logout' %}">Logout</a></p>
     {% else %}
     <p>You are currently not logged in. Please log in to see what you have been missing.</p>
+    <p><a href="{% url 'login' %}">Login</a></p>
     {% endif %}
     <hr/>
 
