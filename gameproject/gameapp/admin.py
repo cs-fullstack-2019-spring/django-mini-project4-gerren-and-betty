@@ -4,10 +4,5 @@ from django.contrib import admin
 from .models import CollectorModel
 from .models import GameModel
 
-
-
 admin.site.register(CollectorModel)
 admin.site.register(GameModel)
-
-
-
