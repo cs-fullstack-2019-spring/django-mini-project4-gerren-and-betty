@@ -13,3 +13,11 @@ Here is a list of your games:
 
 {% for everyGame in list_of_games %}
 <h2>{{everyGame.name}}</h2>
+
+{% endfor %}
+
+{% else %}
+
+<p>There is currently zero(0) games saved in your inventory.</p>
+{% endif %}
+{% endblock content %}

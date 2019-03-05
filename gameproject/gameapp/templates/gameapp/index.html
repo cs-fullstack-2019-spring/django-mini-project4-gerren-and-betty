@@ -15,12 +15,19 @@
     </h1>
     <!--===========HELLO USER==============-->
     {% if user.is_authenticated %}
+<<<<<<< HEAD
     Hello!!! {{ user.username }}!
 
     <p><a href="{% url 'logout' %}">Logout</a></p>
     {% else %}
     <p>You are currently not logged in. Please log in to see what you have been missing.</p>
     <p><a href="{% url 'login' %}">Login</a></p>
+=======
+    Hello, {{ user.username }}!!!
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+    <p>You are currently NOT logged in. Please log in to add to your favorite games.</p>
+>>>>>>> 5c9a8f63fff59de5485bcf18be535788b94b9c74
     {% endif %}
     <hr/>
 
