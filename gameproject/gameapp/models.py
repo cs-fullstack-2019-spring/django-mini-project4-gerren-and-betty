@@ -10,11 +10,12 @@ class CollectorModel(models.Model):
     username = models.CharField(max_length=50)
     password1 = models.CharField(max_length=16)
     password2 = models.CharField(max_length=16)
-    dateAccountCreated = models.DateField(timezone.now)
+    dateAccountCreated = models.DateField(default=timezone.now)
     userTableForeignKey = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
 
     def __str__(self):
         return self.username
+
 
 class GameModel(models.Model):
     name = models.CharField(max_length=50)

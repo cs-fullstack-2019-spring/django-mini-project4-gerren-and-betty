@@ -30,10 +30,9 @@ class CollectorForm(forms.ModelForm):
 
     # function that validates that passwords match
 
-
-def clean_password(self):
-    cleanPasswordData = self.cleaned_data['password2']
-    if 'password1' != 'password2' in cleanPasswordData:
-        raise forms.ValidationError('Passwords do not match! Re-enter!')
-    else:
-        return redirect('gameapp/mygames.html')
+    def clean_password(self):
+        cleanPasswordData = self.cleaned_data['password1', 'password2']
+        if 'password1' != 'password2' in cleanPasswordData:
+            raise forms.ValidationError('Passwords do not match! Re-enter!')
+        else:
+            return redirect('gameapp/mygames.html')
