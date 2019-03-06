@@ -9,25 +9,18 @@
 <div>
 
     <!--=============HEADER===============-->
-    <h1>{% block header %}
-        Welcome Game Collector!!
+    {% block header %}<h1>
+        Welcome Game Collector!!</h1>
         {% endblock header %}
-    </h1>
+
     <!--===========HELLO USER==============-->
     {% if user.is_authenticated %}
 
-    Hello!!! {{ user.username }}!
-
-    <p><a href="{% url 'logout' %}">Logout</a></p>
-    {% else %}
-
-<<<<<<< HEAD
-    <p><a href="{% url 'login' %}">Login</a></p>
     Hello, {{ user.username }}!!!
+
     <p><a href="{% url 'logout' %}">Logout</a></p>
     {% else %}
-=======
->>>>>>> b515525fa68212fe33a4081ee2956344d633b197
+
     <p>You are currently NOT logged in. Please log in to add to your favorite games.</p>
 
     {% endif %}

@@ -4,10 +4,15 @@
 {% block header %}
 My Game Profile
 {% endblock header %}
-
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{newGameForm.as_p}}
+    <button>Submit</button>
+</form>
 <!--A for loop iterating through a set of games.-->
 
-{% block content %}
+
 {% if list_of_games %}
 
 {% for everyGame in list_of_games %}

@@ -8,12 +8,11 @@ class GameForm(forms.ModelForm):
         model = GameModel
         exclude = ['collector']
 
-    def clean_dateMade(self):
-        dateMadeData = self.cleaned_data['dateMade']
-        if '0000-00-00' in dateMadeData:
-            raise forms.ValidationError('enter valid date')
-
-        return dateMadeData
+    # def clean_dateMade(self):
+    #     dateMadeData = self.cleaned_data['dateMade']
+    #     if '1900-01-01' in dateMadeData:
+    #         raise forms.ValidationError('enter valid date')
+    #     return dateMadeData
 
     def clean_ageLimit(self):
         ageLimitData = self.cleaned_data['ageLimit']
