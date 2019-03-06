@@ -1,8 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
 from .models import GameModel, CollectorModel
 from .forms import CollectorForm, GameForm
+=======
+from .models import GameModel
+<<<<<<< HEAD
+from .forms import GameForm
+
+
+# Create your views here.
+=======
+from .forms import CollectorForm
+>>>>>>> 737853e489d4f504055a834ab2eb5a18c86f06b3
 from django.contrib.auth.models import User
 
 
@@ -10,16 +21,38 @@ from django.contrib.auth.models import User
 
 
 # function injects list into mygames.html
+<<<<<<< HEAD
 
+=======
+>>>>>>> e8df464fcd620ab816758cf7aae21db3e37ae897
+@login_required
+>>>>>>> 737853e489d4f504055a834ab2eb5a18c86f06b3
 def mygames(request):
     list_of_games = CollectorModel.objects.filter(name=request.user)
 
     context = {'list_of_games': list_of_games}
     return render(request, 'gameapp/mygames.html', context)
 
+<<<<<<< HEAD
 
 # test for index
 @login_required
+=======
+<<<<<<< HEAD
+# def newGameForm(request):
+#     if(request.method == "POST"):
+#         print("The new info has been updated.")
+#         name = request.Post["name"]
+#         developer = request.Post["developer"]
+#         dateMade = request.Post["dateMade"]
+#         ageLimit = request.Post["ageLimit"]
+#         collector = request.Post["collector"]
+#     return render(request, 'gamesapp/mygames.html', {'gameform': newGameForm})
+
+=======
+# test for index
+>>>>>>> e8df464fcd620ab816758cf7aae21db3e37ae897
+>>>>>>> 737853e489d4f504055a834ab2eb5a18c86f06b3
 def index(request):
     return HttpResponse('index')
 
